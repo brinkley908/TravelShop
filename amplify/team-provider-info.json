@@ -1,0 +1,26 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-travelshop-prod-214310-authRole",
+      "UnauthRoleArn": "arn:aws:iam::685371543242:role/amplify-travelshop-prod-214310-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::685371543242:role/amplify-travelshop-prod-214310-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-travelshop-prod-214310-deployment",
+      "UnauthRoleName": "amplify-travelshop-prod-214310-unauthRole",
+      "StackName": "amplify-travelshop-prod-214310",
+      "StackId": "arn:aws:cloudformation:eu-west-2:685371543242:stack/amplify-travelshop-prod-214310/6a14e1c0-f952-11eb-be1b-024af8d095b2",
+      "AmplifyAppId": "d2ke6f41cbsf4q"
+    },
+    "categories": {
+      "auth": {
+        "travelshop": {}
+      },
+      "function": {
+        "helloworld": {
+          "deploymentBucketName": "amplify-travelshop-prod-214310-deployment",
+          "s3Key": "amplify-builds/helloworld-4e396a355a74322b3476-build.zip"
+        }
+      }
+    }
+  }
+}
