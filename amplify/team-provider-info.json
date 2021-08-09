@@ -22,5 +22,26 @@
         }
       }
     }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-travelshop-test-215330-authRole",
+      "UnauthRoleArn": "arn:aws:iam::685371543242:role/amplify-travelshop-test-215330-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::685371543242:role/amplify-travelshop-test-215330-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-travelshop-test-215330-deployment",
+      "UnauthRoleName": "amplify-travelshop-test-215330-unauthRole",
+      "StackName": "amplify-travelshop-test-215330",
+      "StackId": "arn:aws:cloudformation:eu-west-2:685371543242:stack/amplify-travelshop-test-215330/da53f830-f953-11eb-a279-060f249f9358",
+      "AmplifyAppId": "d2ke6f41cbsf4q"
+    },
+    "categories": {
+      "auth": {
+        "travelshop": {}
+      },
+      "function": {
+        "helloworld": {}
+      }
+    }
   }
 }
