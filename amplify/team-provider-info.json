@@ -40,7 +40,10 @@
         "travelshop": {}
       },
       "function": {
-        "helloworld": {}
+        "helloworld": {
+          "deploymentBucketName": "amplify-travelshop-test-215330-deployment",
+          "s3Key": "amplify-builds/helloworld-4e396a355a74322b3476-build.zip"
+        }
       }
     }
   }
