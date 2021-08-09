@@ -1,17 +1,21 @@
 
-export function AwsConfig(): any {
+import aws from './aws-exports'
 
+export function AwsConfig(): any {
+ 
+
+    const dev = {
+        identityPoolId: aws.aws_cognito_identity_pool_id,
+        region: aws.aws_cognito_region,
+        identityPoolRegion: aws.aws_project_region,
+        userPoolId: aws.aws_user_pools_id,
+        userPoolWebClientId: aws.aws_user_pools_web_client_id,
+        oauth: {}
+    }
 
     return {
 
-        Auth: {
-            identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID,
-            region: process.env.REACT_APP_REGION,
-            identityPoolRegion: process.env.REACT_APP_REGION,
-            userPoolId:process.env.REACT_APP_USER_POOL_ID,
-            userPoolWebClientId: process.env.REACT_APP_POOL_WEB_CLIENT_ID,
-            oauth: {}
-        }
+        Auth: dev
 
     }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Usercontext from './components/provider/AppContext'
 
+const env = require('./lib/env');
 type IState = {
     route: string
 }
@@ -24,7 +25,12 @@ interface IProps {
             <Usercontext.Consumer>
                 {context => (
                     <>
-                     {context?.authUser?.username}
+                    <div>
+                        Branch: {env.GetEnv()}
+                    </div>
+                    <div>
+                        User: {context?.authUser?.username}
+                    </div>
                     </>
      
                 )}
