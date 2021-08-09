@@ -34,6 +34,14 @@
       "StackName": "amplify-travelshop-test-131900",
       "StackId": "arn:aws:cloudformation:eu-west-2:685371543242:stack/amplify-travelshop-test-131900/fa6f5990-f90b-11eb-be9e-02a6e27aba96",
       "AmplifyAppId": "d1tasof3u7t1em"
+    },
+    "categories": {
+      "function": {
+        "helloworld": {
+          "deploymentBucketName": "amplify-travelshop-test-131900-deployment",
+          "s3Key": "amplify-builds/helloworld-4e396a355a74322b3476-build.zip"
+        }
+      }
     }
   },
   "richard": {

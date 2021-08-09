@@ -2,7 +2,6 @@
 import aws from './aws-exports'
 
 export function AwsConfig(): any {
- 
 
     const dev = {
         identityPoolId: aws.aws_cognito_identity_pool_id,
@@ -18,6 +17,5 @@ export function AwsConfig(): any {
         Auth: dev
 
     }
-
 
 }
