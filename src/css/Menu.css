@@ -1,0 +1,140 @@
+.MainMenu {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: cornflowerblue;
+}
+.MainMenu .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  position: fixed;
+  top: 58px;
+}
+.MainMenu .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+.MainMenu .menu-icon .navicon:before,
+.MainMenu .menu-icon .navicon:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.MainMenu .menu-icon .navicon:before {
+  top: 5px;
+}
+.MainMenu .menu-icon .navicon:after {
+  top: -5px;
+}
+.MainMenu .menu-btn {
+  display: none;
+}
+.MainMenu .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+.MainMenu .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.MainMenu .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.MainMenu .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.MainMenu .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.MainMenu .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.MainMenu .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+.MainMenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+  color: #000;
+}
+.MainMenu li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  background-color: cornflowerblue;
+  color: #fff;
+}
+.MainMenu li a:hover,
+.MainMenu menu-btn:hover {
+  font-weight: bold;
+}
+.MainMenu .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.MainMenu .avatar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  right: 20px;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.MainMenu .avatar .icon {
+  margin-right: 5px;
+}
+.MainMenu .user-menu {
+  clear: both;
+  transition: max-height 0.2s ease-out;
+  position: fixed;
+  top: 58px;
+  right: 0;
+  width: 200px;
+}
+@media (min-width: 48em) {
+  .MainMenu ul {
+    background-color: cornflowerblue;
+  }
+  .MainMenu li {
+    float: left;
+  }
+  .MainMenu li a {
+    color: #fff;
+  }
+  .MainMenu li a {
+    padding: 20px 30px;
+  }
+  .MainMenu li a:hover,
+  .MainMenu menu-btn:hover {
+    background-color: cornflowerblue;
+    font-weight: bold;
+  }
+  .MainMenu .menu {
+    clear: none;
+    float: left;
+    max-height: none;
+    top: 0;
+    position: relative;
+  }
+  .MainMenu .menu-icon {
+    display: none;
+  }
+}

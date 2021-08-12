@@ -1,9 +1,8 @@
-
 import aws from './aws-exports'
 
 export function AwsConfig(): any {
 
-    const dev = {
+    const defaultEnv = {
         identityPoolId: aws.aws_cognito_identity_pool_id,
         region: aws.aws_cognito_region,
         identityPoolRegion: aws.aws_project_region,
@@ -14,7 +13,7 @@ export function AwsConfig(): any {
 
     return {
 
-        Auth: dev
+        Auth: defaultEnv
 
     }
 
