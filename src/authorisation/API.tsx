@@ -10,8 +10,10 @@ export function TravelShopApiUrl() {
     switch (env.GetEnv()) {
         case "dev":
             return "https://localhost:44301/api"
+
         case "test":
             return "https://hru9tcrmsa.execute-api.eu-west-2.amazonaws.com/test/api"
+            
         default: return "https://80s42f39b1.execute-api.eu-west-2.amazonaws.com/Prod/api"
     }
 }
@@ -146,8 +148,6 @@ export function Get(method: string, options?: IAPIOptions): Promise<AxiosRespons
 
     });
 }
-
-
 
 async function getHeaders(schema?: string) {
     const token = await Auth.getIdToken();

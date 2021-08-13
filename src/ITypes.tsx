@@ -30,6 +30,8 @@ export interface IUserSettings {
   username: string
   email: string
   roles: string[]
+  avatarId: string
+  avatar: string
 }
 
 export interface IAPIResults {

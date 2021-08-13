@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Usercontext from './components/provider/AppContext'
+import AppContext from './components/provider/AppContext'
 import { IUserSettings, IAppConfig, AppStatus } from './ITypes';
 import MainMenu from './components/MainMenu'
 import { Spin, Space } from 'antd';
@@ -79,13 +79,13 @@ class AppRouter extends Component<IProps, IState> {
     render() {
         return (
 
-            <Usercontext.Consumer>
+            <AppContext.Consumer>
                 {context => (
                     <>
                         {this.loadContents(context)}
                     </>
                 )}
-            </Usercontext.Consumer>
+            </AppContext.Consumer>
 
         );
     }
