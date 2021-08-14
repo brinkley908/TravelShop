@@ -11,7 +11,8 @@ type IState = {
 interface IProps {
     visible: boolean
     onClose?: any
-    email: string | null | undefined
+    onUpload?: any
+    username: string | null | undefined
 }
 
 
@@ -31,14 +32,10 @@ export default class AvatarUpload extends Component<IProps, IState> {
     }
 
     formatName(): string {
-        if (this.props.email === null || this.props.email === undefined)
+        if (this.props.username === null || this.props.username === undefined)
             return "";
 
-        return this.props.email;
-
-    }
-
-    onShow() {
+        return this.props.username;
 
     }
 
@@ -50,6 +47,24 @@ export default class AvatarUpload extends Component<IProps, IState> {
     }
 
     onOk() {
+
+        var body ={
+            bucketName: "",
+            payload: this.state.preview,
+            name: this.props.username
+        }
+
+        Post(`user/UploadAvatar`, body)
+        .then(result => {
+            if (this.props.onUpload) {
+                this.props.onUpload(this.state.preview);
+            }
+            })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        this.onClose();
 
     }
 

@@ -21,9 +21,8 @@ class MainMenu extends Component<IProps, IState> {
 
         this.state = {
             uploadVisible: false,
-            showUserMenu: false
+            showUserMenu: false,
         }
-
 
     }
 
@@ -32,8 +31,6 @@ class MainMenu extends Component<IProps, IState> {
         await Auth.signOut();
         window.location.reload();
     }
-
-    
 
     render() {
 
@@ -50,9 +47,11 @@ class MainMenu extends Component<IProps, IState> {
                             <li><a href="#contact">Contact</a></li>
                         </ul>
 
+                     
+                        
                         <div className="avatar" onClick={() => this.setState({ showUserMenu: !this.state.showUserMenu })}>
                             <div className="icon">
-                                <ColorAvatar text={context?.authUser?.username} src={context?.userSettings?.avatarId ?? ""} />
+                                <ColorAvatar text={context?.authUser?.username} src={context?.userSettings?.avatar} />
                             </div>
                             <div>
                                 {context?.authUser?.username}
@@ -68,7 +67,12 @@ class MainMenu extends Component<IProps, IState> {
                             </ul>
                         }
 
-                        <AvatarUpload visible={this.state.uploadVisible} onClose={() => this.setState({uploadVisible: false})} email={context?.authUser?.email} />
+                        <AvatarUpload
+                            visible={this.state.uploadVisible}
+                            onClose={() => this.setState({ uploadVisible: false })}
+                            username={context?.authUser?.username}
+                            onUpload={context?.setAvatar}
+                        />
 
                     </div>
 

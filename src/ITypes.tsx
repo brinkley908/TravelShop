@@ -10,6 +10,8 @@ export interface IAppConfig {
   userSettings: IUserSettings | null | undefined
   appSettings: IAppSettings | null | undefined
   progressMessage: string
+
+  setAvatar: any
 }
 
 export interface IAppSettings {

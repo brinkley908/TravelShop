@@ -33,7 +33,7 @@ export default class AppProvider extends Component<IProps, IState> {
         this.SetMessage = this.SetMessage.bind(this);
         this.GetUser = this.GetUser.bind(this);
         this.GetAppConfig = this.GetAppConfig.bind(this);
-     
+
     }
 
     async componentDidMount() {
@@ -46,8 +46,8 @@ export default class AppProvider extends Component<IProps, IState> {
 
     }
 
-    SetMessage(message: string): void{
-        this.setState({progressMessage: message});
+    SetMessage(message: string): void {
+        this.setState({ progressMessage: message });
     }
 
     async GetUser() {
@@ -99,7 +99,15 @@ export default class AppProvider extends Component<IProps, IState> {
                     userSettings: this.state.userSettings,
                     appSettings: this.state.appSettings,
                     status: this.state.status,
-                    progressMessage: this.state.progressMessage
+                    progressMessage: this.state.progressMessage,
+
+                    setAvatar: (avatar: string) => {
+                        var user = this.state.userSettings;
+                        if (user) {
+                            user.avatar = avatar;
+                            this.setState({userSettings: user})
+                        }
+                    }
                 }}
             >
                 {this.props.children}
