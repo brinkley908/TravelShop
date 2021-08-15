@@ -3,6 +3,7 @@
   position: fixed;
   width: 100%;
   background-color: cornflowerblue;
+  z-index: 3;
 }
 .MainMenu .menu {
   clear: both;
@@ -95,11 +96,11 @@
   flex-direction: row;
   right: 20px;
   color: #fff;
-  margin-top: 15px;
+  margin-top: 10px;
   cursor: pointer;
 }
 .MainMenu .avatar .icon {
-  margin-right: 5px;
+  margin-right: 15px;
 }
 .MainMenu .user-menu {
   clear: both;

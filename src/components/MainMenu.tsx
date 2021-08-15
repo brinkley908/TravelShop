@@ -3,6 +3,7 @@ import AppContext from '../components/provider/AppContext'
 import { ColorAvatar } from './ColorAvatar';
 import AvatarUpload from "./AvatarUpload";
 import { Auth } from "aws-amplify";
+import { NavLink, } from 'react-router-dom';
 
 import '../css/Menu.css'
 
@@ -47,11 +48,9 @@ class MainMenu extends Component<IProps, IState> {
                             <li><a href="#contact">Contact</a></li>
                         </ul>
 
-                     
-                        
                         <div className="avatar" onClick={() => this.setState({ showUserMenu: !this.state.showUserMenu })}>
                             <div className="icon">
-                                <ColorAvatar text={context?.authUser?.username} src={context?.userSettings?.avatar} />
+                                <ColorAvatar text={context?.authUser?.username} src={context?.userSettings?.avatar} size={40} />
                             </div>
                             <div>
                                 {context?.authUser?.username}
@@ -60,9 +59,13 @@ class MainMenu extends Component<IProps, IState> {
 
                         {this.state.showUserMenu &&
                             <ul className="user-menu">
-                                <li><a href="#careers">My Account</a></li>
-                                <li><a href="#careers" onClick={() => this.setState({ uploadVisible: true })}>Upload Photo</a></li>
-                                <li><a href="#careers">Enrole</a></li>
+                                <li><NavLink to="/Account">Account</NavLink></li>
+                                {!context?.userSettings?.guest &&
+                                    <li><a href="#careers" onClick={() => this.setState({ uploadVisible: true })}>Upload Photo</a></li>
+                                }
+                                {context?.userSettings?.guest &&
+                                    <li><NavLink to="/Account#register">Register</NavLink></li>
+                                }
                                 <li><a href="#contact" onClick={this.signOut}>Sign out</a></li>
                             </ul>
                         }

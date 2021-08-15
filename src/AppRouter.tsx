@@ -3,6 +3,10 @@ import AppContext from './components/provider/AppContext'
 import { IUserSettings, IAppConfig, AppStatus } from './ITypes';
 import MainMenu from './components/MainMenu'
 import { Spin, Space } from 'antd';
+import { BrowserRouter as Router, Route, RouteComponentProps, NavLink } from 'react-router-dom';
+
+
+import Account from './components/Account';
 
 import './css/App.css';
 
@@ -59,11 +63,15 @@ class AppRouter extends Component<IProps, IState> {
 
     loadApp() {
         return (
-            <>
+            <Router>
                 <MainMenu />
                 <div className="App">
+                    <Route exact path="/Account"
+                        render={(props) =>
+                            <Account {...props} />
+                        } />
                 </div>
-            </>
+            </Router>
 
         );
     }
@@ -86,6 +94,7 @@ class AppRouter extends Component<IProps, IState> {
                     </>
                 )}
             </AppContext.Consumer>
+
 
         );
     }
